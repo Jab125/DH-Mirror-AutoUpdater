@@ -16,7 +16,5 @@ jobs:
           git clone --mirror https://gitlab.com/jeseibel/distant-horizons.git
           cd distant-horizons.git
           git remote set-url --push origin https://github.com/Jab125/Distant-Horizons-Mirror
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch -p origin
           git push --mirror
