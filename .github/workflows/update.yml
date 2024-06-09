@@ -15,8 +15,6 @@ jobs:
         run: |
           git clone --mirror https://gitlab.com/jeseibel/distant-horizons.git
           cd distant-horizons.git
-          ls
           git remote set-url --push origin https://Jab125:$MIRROR_TOKEN@github.com/Jab125/Distant-Horizons-Mirror.git
           git fetch -p origin
           git push --mirror
-          echo pushed!
