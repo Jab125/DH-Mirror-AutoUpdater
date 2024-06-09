@@ -9,8 +9,6 @@ jobs:
   update:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Update
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_GITHUB_TOKEN }}
