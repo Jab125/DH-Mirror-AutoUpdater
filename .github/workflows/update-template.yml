@@ -1,0 +1,20 @@
+name: Update Example Mod
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/60 * * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Update
+        env:
+          MIRROR_TOKEN: ${{ secrets.MIRROR_GITHUB_TOKEN }}
+        run: |
+          git clone --mirror https://github.com/Jab125/multiloader-example-mod.git
+          cd distant-horizons.git
+          git remote set-url --push origin https://Jab125:$MIRROR_TOKEN@github.com/Jab125/multiloader-example-mod-stonecutter.git
+          git fetch -p origin
+          git push --mirror
